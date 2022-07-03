@@ -8,6 +8,7 @@ authors = ["Your Name <you@example.com>"]
 python = "^3.9"
 Django = "^4.0.5"
 django-widget-tweaks = "^1.4.12"
+django-tailwind = "^3.3.0"
 
 [tool.poetry.dev-dependencies]
 
