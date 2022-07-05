@@ -18,7 +18,7 @@
                 </div>
                 <div class="mt-2 mb-4 relative border border-gray-300 rounded-md px-3 py-2 shadow-sm focus-within:ring-1 focus-within:ring-orange-600 focus-within:border-orange-600">
                     <label for="{{ form.rating.id_for_label }}" class="absolute -top-2 left-2 -mt-px inline-block px-1 bg-white text-xs font-medium text-gray-900">Rating</label>
-                    {% render_field form.rating class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm" %}
+                    {% render_field form.rating class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm rounded-md" %}
                     <div class="text-red-800 text-xs">{{ form.rating.errors|first }}</div>
                 </div>
             </div>
