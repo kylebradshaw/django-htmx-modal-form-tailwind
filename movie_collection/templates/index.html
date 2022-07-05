@@ -66,32 +66,14 @@
     </div>
 </div>
 <!-- Placeholder for the modal -->
-<div id="modal" class="hidden relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-    <!--
-      Background backdrop, show/hide based on modal state.
-
-      Entering: "ease-out duration-300"
-        From: "opacity-0"
-        To: "opacity-100"
-      Leaving: "ease-in duration-200"
-        From: "opacity-100"
-        To: "opacity-0"
-    -->
-    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
-
+<div x-data="{show: false}" x-show="show" x-transition id="modal" class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="fixed inset-0 bg-gray-500 bg-opacity-75"></div>
     <div class="fixed z-10 inset-0 overflow-y-auto">
         <div class="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
-            <!--
-              Modal panel, show/hide based on modal state.
-
-              Entering: "ease-out duration-300"
-                From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                To: "opacity-100 translate-y-0 sm:scale-100"
-              Leaving: "ease-in duration-200"
-                From: "opacity-100 translate-y-0 sm:scale-100"
-                To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-            -->
-            <div id="dialog" hx-target="this" class="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg sm:w-full">
+            <div id="dialog" hx-target="this"
+                 @htmx:after-swap="show = true"
+                 @htmx:before-swap="if(!$event.detail.xhr.response) { show = false; $event.detail.shouldSwap = false;}"
+                 class="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform sm:my-8 sm:max-w-lg sm:w-full">
             </div>
         </div>
     </div>
@@ -130,7 +112,6 @@
 <!-- Scripts: Alpine, HTMX, and custom JavaScript -->
 <script src="{% static "js/htmx.min.js" %}"></script>
 <script src="{% static "js/alpine.min.js" %}" defer></script>
-<script src="{% static "dialog.js" %}"></script>
 <script src="{% static "toast.js" %}"></script>
 </body>
 </html>
