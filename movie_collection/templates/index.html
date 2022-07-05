@@ -41,7 +41,7 @@
                 </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-200 bg-white" hx-trigger="load, movieListChanged from:body"
-                       hx-get="{% url 'movie_list' %}?delay=3.0" hx-target="this" hx-indicator="#loading-indicator">
+                       hx-get="{% url 'movie_list' %}" hx-target="this" hx-indicator="#loading-indicator">
                 <tr>
                     <td colspan="3"><div class="mx-auto"><p class="text-center text-lg">Retrieving Movies...</p></div></td>
                 </tr>

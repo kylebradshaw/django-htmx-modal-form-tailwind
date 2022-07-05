@@ -10,7 +10,7 @@
     <td class="hidden px-3 py-4 text-sm text-gray-500 lg:table-cell">{{ movie.year }}</td>
     <td class="px-3 py-4 text-sm text-gray-500">{{ movie.get_rating_display }}</td>
     <td class="py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-        <button hx-get="{% url 'edit_movie' pk=movie.pk %}" hx-target="#dialog" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-orange-700 bg-orange-100 hover:bg-orange-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">Edit<span class="sr-only">, Lindsay Walton</span></button>
+        <button hx-get="{% url 'edit_movie' pk=movie.pk %}" hx-target="#dialog" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-orange-700 bg-orange-100 hover:bg-orange-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500">Edit<span class="sr-only">, {{ movie.title }}</span></button>
     </td>
 </tr>
 {% endfor %}
