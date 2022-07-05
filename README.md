@@ -18,5 +18,13 @@ To set things up using `poetry` run:
 ```
 poetry install
 poetry run python manage.py migrate
+poetry run python manage.py tailwind install
+poetry run python manage.py tailwind build
 poetry run python manage.py runserver
 ```
+
+### Credits
+
+The Tailwind CSS branch includes markup adapted from TailwindUI, which is used according to the terms of the TailwindUI license. It also includes an SVG spinner adapted from [Flowbite](https://flowbite.com/docs/components/spinner/), which is Copyright (c) Themesberg (Crafty Dwarf Inc.) and is [used under the terms of the MIT license](https://flowbite.com/docs/getting-started/license/).
+
+Both the authors of TailwindUI and the authors of Flowbite have really helped me improve my understanding of Tailwind, and I'm grateful that they publish their work under such generous terms.
